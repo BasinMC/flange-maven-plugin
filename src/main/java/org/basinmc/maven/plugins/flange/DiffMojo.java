@@ -51,7 +51,7 @@ public class DiffMojo extends AbstractMojo {
     /**
      * Specifies the file to write the diff to.
      */
-    @Parameter(defaultValue = "${project.build.directory}/${project.build.finalName}.diff")
+    @Parameter(defaultValue = "${project.build.directory}/${project.build.finalName}.fldiff")
     private File diffFile;
 
     /**
