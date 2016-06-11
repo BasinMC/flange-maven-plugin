@@ -4,7 +4,7 @@
 
     <!-- Artifact Information -->
     <groupId>org.basinmc.maven.plugins</groupId>
-    <artifactId>bsdiff-maven-plugin</artifactId>
+    <artifactId>flange-maven-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
@@ -25,7 +25,7 @@
     </licenses>
 
     <!-- Artifact Metadata -->
-    <name>bsdiff Maven Plugin</name>
+    <name>Flange Maven Plugin</name>
     <description>A maven plugin which is capable of comparing artifacts and generating binary diffs.</description>
 
     <organization>
@@ -47,14 +47,14 @@
 
     <scm>
         <tag>master</tag>
-        <url>https://github.com/BasinMC/bsdiff-maven-plugin</url>
-        <connection>scm:git:git@github.com:/BasinMC/bsdiff-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:/BasinMC/bsdiff-maven-plugin.git</developerConnection>
+        <url>https://github.com/BasinMC/flange-maven-plugin</url>
+        <connection>scm:git:git@github.com:/BasinMC/flange-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:/BasinMC/flange-maven-plugin.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/BasinMC/bsdiff-maven-plugin/issues</url>
+        <url>https://github.com/BasinMC/flange-maven-plugin/issues</url>
     </issueManagement>
 
     <distributionManagement>

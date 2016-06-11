@@ -1,4 +1,4 @@
-package org.basinmc.maven.plugins.bsdiff;
+package org.basinmc.maven.plugins.flange;
 
 import org.apache.commons.compress.compressors.CompressorException;
 import org.apache.maven.artifact.Artifact;
