@@ -97,9 +97,12 @@ public class DiffMojo extends AbstractMojo {
             Artifact artifact = this.artifactFactory.createBuildArtifact(elements[0], elements[1], elements[2], "jar");
             this.artifactResolver.resolve(artifact, Collections.emptyList(), this.session.getLocalRepository());
 
+            this.getLog().info("Generating diff ...");
             FileUI.diff(artifact.getFile(), this.inputFile, this.diffFile, this.diffCompression);
+            this.getLog().info("Diff was written to " + this.diffFile.toString());
 
             if (this.attach) {
+                this.getLog().info("Attaching diff to project artifact");
                 this.projectHelper.attachArtifact(this.project, this.diffFile, "diff");
             }
         } catch (CompressorException e) {
