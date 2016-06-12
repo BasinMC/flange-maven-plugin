@@ -18,6 +18,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.MavenProjectHelper;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -132,11 +133,15 @@ public class DiffMojo extends AbstractMojo {
                 buf.putInt(gameVersion.length);
                 buf.put(gameVersion);
 
-                outputStream.write(buf.array());
-
                 // write the actual bsdiff
+                ByteArrayOutputStream patchStream = new ByteArrayOutputStream();
+
                 DefaultDiffSettings diffSettings = new DefaultDiffSettings(this.diffCompression);
-                Diff.diff(originalBytes, newBytes, outputStream, diffSettings);
+                Diff.diff(originalBytes, newBytes, patchStream, diffSettings);
+
+                buf.putInt(patchStream.size());
+                outputStream.write(buf.array());
+                outputStream.write(patchStream.toByteArray());
             }
             this.getLog().info("Diff was written to " + this.diffFile.toString());
 
